@@ -1,4 +1,4 @@
-gaza
+gaza :octocat
 ====
 
 landing page for TWTH Gaza campaign
