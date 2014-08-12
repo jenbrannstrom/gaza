@@ -770,6 +770,10 @@ body {
 	margin:0 0 1em 0;	
 }
 
+.form-row .inner {
+text-align: right;
+}
+
 .booklet img{
     width:55%;
     min-width:50px;
@@ -794,7 +798,11 @@ body {
 }
 
 @media screen and (min-width: 50em) { 
-	#menu { 
-		display: block !important
-	} 
+#menu { 
+    display: block !important
+} 
+.form-row .inner{
+text-align: right;
+}
+    
 }
