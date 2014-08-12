@@ -4,7 +4,8 @@
 /* Defaults */
 
 html {
-	height:100%	
+    background: url(../img/olive.jpg) top center no-repeat;
+    height:100%
 }
 
 body {
@@ -755,7 +756,7 @@ h2.menulink a {
 }
 /* style-color-06 file */
 
-#wrapper { background: url(http://templatewireframes.com/demos/conversion/templates/images/backgrounds/background__picture.jpg) top center; background-repeat: no-repeat }
+#wrapper { background: url(img/olive.jpg) top center no-repeat }
 		
 a.btn, a.btn:visited { 
 	border: solid 1px #06507b; 
