@@ -454,7 +454,7 @@ form a:hover {
 	color:#000;	
 	padding:0;
 	margin:4em 0 2em 0;
-	text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.3); 
+
 }
 
 .intro h1 {
@@ -823,6 +823,16 @@ body {
 .form-row .inner {
 text-align: right;
 }
+
+.form-row input.text, .form-row textarea {
+	padding:0.1em 4%;
+	font-size:1.5em;
+	font-weight: 300;
+	font-family: 'Droid Arabic Kufi', serif;
+	background:#fff;
+	color:#0000FF;  
+}
+
 
 .booklet img{
     width:55%;
