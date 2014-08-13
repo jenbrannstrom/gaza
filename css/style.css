@@ -217,6 +217,10 @@ img {
 	float: right;
 	width:45%;	 
 }
+img.resize{
+    width:85%;
+    min-width:50px;
+}
  
  /* Strip ==================================== */	
 
@@ -836,7 +840,7 @@ text-align: right;
 }
 
 
-.booklet img{
+#booklet img{
     width:55%;
     min-width:50px;
 }
