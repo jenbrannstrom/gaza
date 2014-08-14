@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<meta charset="utf-8">
+<head>
+<title>الطريق إلى السعادة</title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<link href="css/style.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/simple-line-icons.css">
+<link href='http://fonts.googleapis.com/earlyaccess/droidarabickufi.css' rel='stylesheet' type='text/css'>
+
+<script>
+	var APIKEY = "5d697233-0702-419b-992e-a62951ba439a";
+	var r = false;
+	var success_message = '<div style="padding:10px;">Thank you</div>';
+	function createRequest(){
+	try{
+	r=new XMLHttpRequest();
+	}catch(trymicrosoft){
+	try{r=new ActiveXObject('Msxml2.XMLHTTP');
+	}catch(othermicrosoft){
+	try{r=new ActiveXObject('Microsoft.XMLHTTP');
+	}catch(failed){
+	r=false;
+	}
+	}
+	}
+	
+	if(!r){
+	alert('Error initializing XMLHttpRequest!');
+	}
+	}
+	
+	
+	function registerUser() {
+		
+		var cell = document.getElementById('tel').value;	// Get phone input field
+		url = 'http://api.viplus.com/Gates/Ws-'+APIKEY+'.asmx/RMembers_Import' + 
+		'?cellphone=' + escape(cell) + 
+		'&viplists=64518';
+		try{														// Try to register
+			r.overrideMimeType('text');
+			r.open('GET', url, true); 
+			r.onreadystatechange = updatePage; 
+			r.send(null); 
+			return false;
+		}
+		catch(err){
+			alert("error while registering");
+		}
+	}
+	
+	
+	function updatePage() {
+		if (r.readyState == 4) {
+			if(r.status == 200 || r.status == 0){
+				alert("success");
+				document.getElementById("submit").click();
+			}
+			else{
+				alert("erreur");
+			}
+		}
+	}
+	
+	
+	
+	function checking(){
+			
+			var name=document.getElementById("first_name").value;
+			var tel=document.getElementById("tel").value;
+			var email=document.getElementById("user_email").value;
+			var errors=new Array();
+			if(name.length < 2 || name==""){
+				document.getElementById("first_name").style.backgroundColor="rgb(255, 182, 193)";
+				errors.push("false");
+			}else{
+				document.getElementById("first_name").style.backgroundColor="";
+				
+			}
+			
+			if(tel.length < 7 || !validatePhone(tel) || tel==""){
+				
+				document.getElementById("tel").style.backgroundColor="rgb(255, 182, 193)";
+				errors.push("false");
+			}else{
+				document.getElementById("tel").style.backgroundColor="";
+				
+			}
+			
+			if(errors.length ==0){
+				createRequest();
+				registerUser();
+				
+				
+			}
+			
+		}
+		
+	
+	function validatePhone(e){
+		var re = /^[0-9\-]+$/;
+		return re.test(e);
+		}
+</script>
+</head>
+<body>
+<div id="wrapper" class="wrapper-flexi">
+<!-- Start Content -->
+<div class="container">
+<div class="row">
+<div class="span2">&nbsp;</div>
+<div class="span8">	
+<div class="inner intro align-center" id="form-div">
+<h1>21 طريقه تستطيع ان تساعد بها <span> غزة</span> </h1>
+<h2>الطريق إلى السعادة : دليل بسيط لحياة افضل</h2>
+<h2>اكثر من 120,000,000 نسخه تم قرائتها فى 90 لغة حول العالم, تظهر مبادىء اخلاقية يستطيع الجميع الاتفاق عليها </h2>
+<h2>على نسختك مجانا احصل</h2>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="row">
+<div class="span3">&nbsp;</div>
+<div class="span6">
+<div class="inner">
+<div class="form-box">
+<div class="top">
+<div>
+<img class="sponsors" src="img/tsawt.jpg" width="40" height="40"/>
+<img class="sponsors" src="img/talaqsq.png" width="40" height="40"/>
+<img class="sponsors" src="img/talhorya.png" width="40" height="40"/>
+<img class="sponsors" src="img/tmazaj.png" width="40" height="40"/>
+<img class="sponsors" src="img/trb2000.png" width="40" height="40"/>
+</div>
+<div class="sponsor-text" ><h6>كما تم سماعه على :</h6>
+<h3>اسرع : احصل على كتيبك المجانى قبل انتهاء العدد. من فضلك ادخل عنوانك فى الاسفل و سنرسلها إليك</h3>
+<h3> او إتصل بنا على <a href="tel:052 300 2999"><span dir="LTR"> 052 300 2999 </span></h3></a>
+<img src="img/booklet.png" display="inline-block" text-align="right" height="290" width="175"></div>
+</div>
+<div class="bottom">
+<form method="post" action="thankyou.html" name="example">
+<div class="form-row">
+<div class="span5">
+<div class="inner">
+<label> اسم <span class="glyph-item icon-arrow-left" aria-hidden="true"></span>
+</label>
+</div>
+</div>
+<div class="span7">
+<input id="first_name" class="text login_input" type="text" name="first_name" required />
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="form-row">	
+<div class="span5">
+<div class="inner">
+<label> الشارع <span class="glyph-item icon-arrow-left" aria-hidden="true"></span>
+</label>
+</div>
+</div>
+<div class="span7">
+<input id="street" class="text login_input" type="text" name="street" />
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="form-row">	
+<div class="span5">
+<div class="inner">
+<label> المدينة <span class="glyph-item icon-arrow-left" aria-hidden="true"></span>
+</label>
+</div>
+</div>
+<div class="span7">
+<input id="city" class="text login_input" type="text" name="city" />
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="form-row">	
+<div class="span5">
+<div class="inner">
+<label>الرمز البريدي<span class="glyph-item icon-arrow-left" aria-hidden="true"></span>
+</label>
+</div>
+</div>
+<div class="span7">
+<input id="postcode" class="text login_input" type="number" name="postcode" />
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="form-row">	
+<div class="span5">
+<div class="inner">
+<label> البريد الالكتروني <span class="glyph-item icon-arrow-left" aria-hidden="true"></span>
+</label>
+</div>
+</div>
+<div class="span7">
+<input id="user_email" type="email" class="text login_input" name="user_email" />
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="form-row">	
+<div class="span5">
+<div class="inner">
+<label> تلفون <span class="glyph-item icon-arrow-left" aria-hidden="true"></span>
+</label>
+</div>
+</div>
+<div class="span7">
+<input id="tel" type="tel" class="text login_input" name="tel" />
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="form-row">
+<input type="button" value="إرسل الي كتيبي المجانى" id="check" onclick="checking();" class="btn btn-wide btn-extrawide" data-loading-text="Loading...">
+<input type="submit" name="register" value="إرسل الي كتيبي المجانى" class="btn btn-wide btn-extrawide" data-loading-text="Loading..."  style="display:none" id="submit"/>
+<div class="clearfix"></div>
+</div>
+</form>
+</div>
+</div>
+<div class="shadow"></div>
+<div class="clearfix"></div>
+<p class="padded align-center">Privacy: Your information will never be shared</p>
+</div>
+</div>
+</div>
+</div>
+<div class="strip features">
+<div class="container">
+<div class="row">
+<div class="span3">
+<div class="inner">
+<span><img src="img/qatar.jpg"></span>
+<h3>وزارة الثقافة والفنون والتراث قطر</h3>
+</div>
+</div>
+<div class="span3">
+<div class="inner">
+<span><img src="img/palestine.jpg"></span>
+<h3>وزارة التربية و التعليم والعالي - فلسطين</h3>
+</div>
+</div>
+<div class="span3">
+<div class="inner">
+<span><img src="img/uae.jpg"></span>
+<h3>الإمارات العربية المتحدة: المجلس الوطني للإعلام </h3>
+</div>
+</div>
+<div class="span3">
+<div class="inner">
+<span><img src="img/lebanon.jpg"></span>
+<h3>لبنان :المديرية العامة للأمن العام وقوى الأمن </h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="strip features strip-alt">
+<div class="container">
+<div class="row">
+<div class="span4">
+<div class="inner">
+<span><img src="img/nigeria.jpg"></span>
+<h3>Nigerian Education Tax Fund</h3>
+</div>
+</div>
+<div class="span4">
+<div class="inner">
+<span><img src="img/syria.jpg"></span>
+<h3>سوريا :وزارة الإعلام</h3>
+</div>
+</div>
+<div class="span4">
+<div class="inner">
+<span><img src="img/pakistan.jpg"></span>
+<h3>باكستان : قاعة كراتشي للتجارة</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End content -->	
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<div id="footer">تم التبرع بها للشعبطيني عن طريق اصدقاء فلسطين الاوروبيين حقوق النشر الطريق إلي السعادة &copy; 2014<div class="clearfix"></div>
+</div>
+<!--[if lte IE 7]><script src="js/icons-lte-ie7.js"></script><![endif]-->
+<script src="js/jquery.min.js" ></script>
+<script src="js/respond.min.js"></script>
+<script src="js/scripts.js"></script>
+<!--<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-44005012-1', 'auto');
+ga('send', 'pageview');
+</script>-->
+
+</body>
+</html>
