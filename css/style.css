@@ -840,7 +840,7 @@ text-align: right;
 }
 
 
-#booklet img{
+img#booklet{
     width:55%;
     min-width:50px;
 }
