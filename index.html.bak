@@ -8,44 +8,6 @@
 <link href="css/style.css" rel="stylesheet"/>  
 <link rel="stylesheet" href="css/simple-line-icons.css">
 <link href='http://fonts.googleapis.com/earlyaccess/droidarabickufi.css' rel='stylesheet' type='text/css'>
-<script>
-window.onload=function(){
-	document.oncontextmenu=function(){
-		return false;
-	};
-}
-        function postContactToGoogle() {
-			
-            var email = $('#email').val();
-            var first_name = $('#first_name').val();
-            var post_code = $('#post_code').val();
-            var city = $('#city').val();
-			var tel=$("#tel").val();
-			var street=$("#street").val();
-
-                $.ajax({
-                    url: "https://docs.google.com/forms/d/1eSE2LMf4wVINFRvvns0STrphTTyTtXx1WAFEcPf3X0I/formResponse",
-                    data: { 
-					"entry.609988044": email, 
-                    "entry.1768436539": first_name, 
-					"entry.1744808251": post_code,
-					"entry.1113743172": street,
-					"entry.1088335660":tel,
-					"entry.2112667468":city
-					},
-                    type: "POST",
-                    dataType: "xml",
-                    statusCode: {
-                        0: function () {
-                            window.location.replace("thankyou.html");
-                        },
-                        200: function () {
-                            window.location.replace("thankyou.html");
-                        }
-                    }
-                });
-        }
-    </script>
 </head> 
 <body>
 <div id="wrapper" class="wrapper-flexi">
@@ -85,7 +47,7 @@ window.onload=function(){
     
 </div>
 <div class="bottom">
-  <form action="https://docs.google.com/forms/d/1j22ZwdZ1Xu7BBM2o1ZEgiyy0tADzfpgp-POXoTe6Sok/formResponse" method="POST" id="ss-form" target="_self" onsubmit=""> 
+  <form method="post" action="#" name="example"> 
     <div class="form-row">
         <div class="span5">
             <div class="inner">
@@ -94,7 +56,7 @@ window.onload=function(){
             </div>
         </div>
         <div class="span7">
-            <input id="first_name" class="text login_input" name="entry.1768436539" required="" type="text">
+            <input id="first_name" class="text login_input" type="text" name="first_name" required />
         </div>
         <div class="clearfix"></div>
     </div>
@@ -106,7 +68,7 @@ window.onload=function(){
             </div>
         </div>
         <div class="span7">
-            <input id="street" class="text login_input" name="entry.1113743172" type="text">
+            <input id="street" class="text login_input" type="text" name="street" />
         </div>
         <div class="clearfix"></div>
     </div> 
@@ -118,7 +80,7 @@ window.onload=function(){
             </div>
         </div>
         <div class="span7">
-            <input id="city" class="text login_input" name="entry.2112667468" type="text">
+            <input id="city" class="text login_input" type="text" name="city" />
         </div>
         <div class="clearfix"></div>
     </div> 
@@ -130,7 +92,7 @@ window.onload=function(){
             </div>
         </div>
         <div class="span7">
-            <input id="postcode" class="text login_input" name="entry.1744808251" type="number">
+            <input id="postcode" class="text login_input" type="number" name="postcode" />
         </div>
         <div class="clearfix"></div>
     </div> 
@@ -142,7 +104,7 @@ window.onload=function(){
             </div>
         </div>
         <div class="span7">
-            <input id="user_email" class="text login_input" name="entry.609988044" type="email">
+            <input id="user_email" type="email" class="text login_input" name="user_email" />
         </div>
         <div class="clearfix"></div>
     </div>
@@ -154,18 +116,18 @@ window.onload=function(){
             </div>
         </div>
         <div class="span7">
-            <input id="tel" class="text login_input" name="entry.1088335660" type="tel">
+            <input id="tel" type="tel" class="text login_input" name="tel" />
         </div>
         <div class="clearfix"></div>
     </div>
     <div class="form-row">
-    <input name="register" value="إرسل الي كتيبي المجانى" class="btn btn-wide btn-extrawide" data-loading-text="Loading..." type="button" onclick="postContactToGoogle();">
+    <input type="submit" name="register" value="إرسل الي كتيبي المجانى" class="btn btn-wide btn-extrawide" data-loading-text="Loading..." />
     <div class="clearfix"></div>
     </div>
     </form>
 	</div> 
 	</div>
-	<div style="display: block;" class="shadow"></div>
+	<div class="shadow"></div>
 	<div class="clearfix"></div>
 	<p class="padded align-center">Privacy: Your information will never be shared</p>
 	
