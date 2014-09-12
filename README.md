@@ -1,5 +1,8 @@
 Gaza pages 
 ====
+[![alt text][1.1]][1]
+[![alt text][2.1]][2]
+[![alt text][3.1]][3]
 
 landing page for TWTH Gaza campaign
 
@@ -11,9 +14,7 @@ with "A Name": http://int.thewaytohappinessstl.org.
 
 <!-- display the social media buttons in your README -->
 
-[![alt text][1.1]][1]
-[![alt text][2.1]][2]
-[![alt text][3.1]][3]
+
 
 <!-- links to social media icons -->
 <!-- no need to change these -->
