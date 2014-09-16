@@ -195,6 +195,12 @@ img {
 	clear: both	
 } 
 
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
 .align-center {
 	text-align: center
 } 
@@ -205,6 +211,12 @@ img {
 
 .align-right {
 	text-align: right
+}
+
+.center-block {
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
 }
  
  /* content ==================================== */	
@@ -289,8 +301,9 @@ img.sponsors{
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
 }
-.sponsor-text{
-
+.small-text {
+	text-align:left;
+	color: #999;
 }
 form {
 	
@@ -379,6 +392,11 @@ form a:hover {
 .form-row .inner {
 	margin:0 1em 0 0;
 	text-align: left
+}
+
+.form-row .span5, .form-row .span7 {
+	margin-top:0.25em;
+	margin-bottom:0.25em;
 }
 
 /* Header */
@@ -839,10 +857,13 @@ text-align: right;
 	color:#0000FF;  
 }
 
+img.sponsors {
+	width: 26px;
+	height: 26px;
+}
 
 img#booklet{
-    width:55%;
-    min-width:50px;
+    width:105px;
 }
 #container_main{
 	margin:0; 
