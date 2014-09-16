@@ -289,8 +289,9 @@ img.sponsors{
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
 }
-.sponsor-text{
-
+.small-text {
+	text-align:left;
+	color: #999;
 }
 form {
 	
@@ -839,10 +840,13 @@ text-align: right;
 	color:#0000FF;  
 }
 
+img.sponsors {
+	width: 26px;
+	height: 26px;
+}
 
 img#booklet{
-    width:55%;
-    min-width:50px;
+    width:105px;
 }
 #container_main{
 	margin:0; 
