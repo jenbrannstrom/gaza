@@ -5,7 +5,8 @@
 
 html {
     background: url(../img/olive.jpg) top center no-repeat;
-    height:100%
+    background-size: cover;
+    height:100%;
 }
 
 body {
@@ -508,6 +509,10 @@ form a:hover {
 
 }
 
+#booklet {
+	float:left;
+	margin:3px}
+
 /* featured */
 
 .featured img { 
@@ -760,7 +765,7 @@ h2.menulink a {
 	padding:1em	
 }
 
-.intro h1 {
+.intro h1, .intro .highlight {
 	font-size:2em	
 }
 
