@@ -52,7 +52,7 @@ $(document).ready(function() {
 					var google_remarketing_only = false;
                     $.getScript( "http://www.googleadservices.com/pagead/conversion.js" );
 					//alert("Verified! You will be redirected to a new Page!");
-					window.location.replace("thankyou.php");
+					window.location.replace("thankyou.html");
                 }
             }, "json");
 		}else{
