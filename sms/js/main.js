@@ -59,14 +59,6 @@ $(document).ready(function() {
 			$('#error_display').html('Invalid Verification Code! Please Check!');
 		}
     });
-	
-	var leadpages_input_data = {
-		'message': "Get this FREE Instant video! Just enter your email ASAP!" //Alert Popup Message
-	};
-	
-	$(".video-placeholder").click(function() {
-	  alert(leadpages_input_data['message']);
-	});
 });
 
 function validatePhone() {
