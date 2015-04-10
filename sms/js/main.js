@@ -12,7 +12,7 @@ $(document).ready(function() {
 		$('#error_display').empty();
 		if(validatePhone()){
 			$.post("http://gazalp-mql.rhcloud.com/sms.php", {
-                name: encodeURIComponent($("#popup_name").val()),
+                name: $("#popup_name").val(),
                 phone_number: $("#phone_number").val()
             },
             function(data) {
