@@ -32,7 +32,53 @@
         <div class="step1">
           <h1>الخطوة 1 </h1>
 		  <h2> شاهد هذا الفيديو  </h2>
-          <div class="video-placeholder" data-lead-id="video"> <iframe width="500" height="281" src="//www.youtube.com/embed/0fMEgRi_88Q?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div>
+          <div class="video-placeholder" data-lead-id="video"> 
+<div id="player"></div>
+     <script>
+         var tag = document.createElement('script');
+         tag.src = "http://www.youtube.com/player_api";
+         var firstScriptTag = document.getElementsByTagName('script')[0];
+         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+         var player;
+         var lastAction = '';
+         function onYouTubePlayerAPIReady() {
+             player = new YT.Player('player', {
+                 playerVars: {
+                     modestbranding: true,
+                     theme: 'light',
+                     rel: 0
+                 },
+                 height: '281',
+                 width: '500',
+                 videoId: '0fMEgRi_88Q',
+                 events: {
+                     'onStateChange': onPlayerStateChange
+                 }
+             });
+         }
+ 		
+		function onPlayerStateChange(event) {
+             switch (event.data) {
+                 case YT.PlayerState.PLAYING:
+                     //_gaq.push(['_trackEvent', 'video', 'started', player.getVideoUrl()]);
+                     _gaq.push(['_trackEvent', 'video', 'started', 'overview']);
+                     break;
+                 case YT.PlayerState.ENDED:
+                     _gaq.push(['_trackEvent', 'video', 'completed', 'overview']);
+                     break;
+                 case YT.PlayerState.PAUSED:
+                     if (lastAction != 'paused') {
+                         _gaq.push(['_trackEvent', 'video', 'paused', 'overview']);
+                     } else {
+                         lastAction = 'paused';
+                     }
+                     break;
+             }
+         }
+	</script>
+
+</div>
           <p data-lead-id="cta-text"> هكذا ولأي سبب من الأسباب، تغدو الجهود التي يبذلها الإنسان من أجل تحسين أوضاعه وجعل حياته أكثر سعادة، عُرضة للتهجّم من قبل الآخرين </p>
         </div>
         <div class="step2">
