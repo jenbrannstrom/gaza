@@ -36,7 +36,7 @@
                   <h3><font><font>Or call us at </font></font><a href="tel:0569547013"><span dir="LTR"><font><font>056 954 7013</font></font></span></a></h3>
                 </div>
                 <div class="bottom" id="mc_embed_signup">
-				  <form action="http://facebook.us8.list-manage.com/subscribe/post?u=e68ed70193301eb87604d58da&amp;id=27da5ca54f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				  <form action="//facebook.us8.list-manage.com/subscribe/post?u=e68ed70193301eb87604d58da&amp;id=27da5ca54f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                     <div id="notification_container"></div>
                     <div class="form-row">
                       <div class="span5">
@@ -153,7 +153,7 @@ function register($form) {
     url: $form.attr('action'),
     data: $form.serialize(),
     cache       : false,
-    dataType    : 'jsonp',
+    dataType    : 'json',
     contentType: "application/json; charset=utf-8",
     error       : function(err) { 
 		$('#notification_container').html('<span class="alert">Could not connect to server. Please try again later.</span>'); 
