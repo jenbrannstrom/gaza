@@ -162,7 +162,7 @@ function register($form) {
 			if (data.result != "success") {
 				var message = data.msg.substring(4);
 				$('#notification_container').html('<span class="alert">'+message+'</span>');
-				window.location.replace("thankyou.html");
+				//window.location.replace("thankyou.html");
 			} else {
 				var message = data.msg;
 				$('#notification_container').html('<span class="success">'+message+'</span>');
