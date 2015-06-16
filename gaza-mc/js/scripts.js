@@ -29,3 +29,35 @@ function resize_intro(){
 		}
 	} 
 }
+
+$("#mc-embedded-subscribe-form").submit(function(e){
+    e.preventDefault();
+    register($("#mc-embedded-subscribe-form"));
+});
+function register($form) {
+    $.ajax({
+        type: "GET",
+        url: $form.attr("action"),
+        data: $form.serialize(),
+        cache: false,
+        dataType: "jsonp",
+        jsonp: "c", // trigger MailChimp to return a JSONP response
+        contentType: "application/json; charset=utf-8",
+
+        error: function(error){
+            // According to jquery docs, this is never called for cross-domain JSONP requests
+        },
+
+        success: function(data){
+            var resultMessage = data.msg || "Sorry. Unable to subscribe. Please try again later."
+			if (data.result != "success") {
+				var message = data.msg.substring(4);
+				$('#notification_container').html('<span class="alert">'+message+'</span>');
+			} else {
+				var message = data.msg;
+				$('#notification_container').html('<span class="success">'+message+'</span>');
+				window.location.replace("thankyou.html");
+			}            
+        }
+    });
+}
