@@ -41,19 +41,21 @@ window.onload=function(){
             	var city = $('#city').val();
 		var tel=$("#tel").val();
 		var street=$("#street").val();
-		var flagEmail = 1;
-		var flagPhone = 1;
+		var flagEmail = 0;
+		var flagPhone = 0;
 		
 		if(email != ""){
-			if(!validateEmail(email)){
+			if(validateEmail(email)){
+				flagEmail = 1;
+			}else{
 				alert("Invalid Email");
-				flagEmail = 0;
 			}
 		}
 		if(tel != ""){
 			if(!validatePhone(tel)){
-				alert("Invalid Phone Number");
-				flagPhone = 0;
+				alert("Invalid Phone Number");	
+			}else{
+				flagPhone = 1;
 			}
 		}
 		
