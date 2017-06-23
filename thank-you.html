@@ -17,6 +17,18 @@
 <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
+
+  <!-- START - Mautic Tracking Pixel -->
+  <script>
+      (function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
+          w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
+          m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://mautic.said.ps/mtc.js','mt');
+
+      mt('send', 'pageview');
+  </script>
+  <!-- END - Mautic Tracking Pixel -->
+
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T5DZKM"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -26,9 +38,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-T5DZKM');</script>
 <!-- End Google Tag Manager -->
-<!-- Mautic Tracking Pixel -->
-<img src="http://mau.said.ps/mau/mtracking.gif" style="display:none" />
-<!-- End Mautic Tracking Pixel -->
 <article role="main">
   <div class="bg-container"> <img src="img/olive.jpg" alt="" class="bg-image"> </div>
   <section role="contentinfo">

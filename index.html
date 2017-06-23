@@ -59,12 +59,12 @@
         <div class="video-placeholder"> <img src="img/booklet.png" alt=""> </div>
         <h4 class="h4">"أدخل اسمك وعنوان البريد الإلكتروني الكامل للحصول على نسخة."</h4>
         <div id="error_display"></div>
-        <form id="signup_form" method="post" action="http://mau.said.ps/mau/form/submit?formId=2">
-            <input type="hidden" name="mauticform[formId]" value="2" />
+        <form id="signup_form" method="post" action="https://mautic.said.ps/form/submit?formId=3">
+            <input type="hidden" name="mauticform[formId]" value="3" />
             <input type="hidden" name="mauticform[return]" value="http://int.thewaytohappinessstl.org/confirm.html" />
-            <input type="hidden" name="mauticform[formName]" value="basicsignuptwth" />
+            <input type="hidden" name="mauticform[formName]" value="twthformsignupintthewaytohappinessstlorg" />
             <div class="tooltipster" data-error="مطلوب الاسم الكامل.">
-                <input id="popup_name" class="popup_fields" type="text" placeholder="اسمك الكامل" name="mauticform[name]">
+                <input id="popup_name" class="popup_fields" type="text" placeholder="اسمك الكامل" name="mauticform[f_name]">
             </div>
             <div class="tooltipster" data-error="مطلوب البريد الإلكتروني.">
                 <input id="popup_email" dir="ltr" class="popup_fields" type="text" placeholder="بريد الالكتروني" name="mauticform[email]">
@@ -74,6 +74,18 @@
             </div>
         </form>
     </div>
+
+    <!-- START - Mautic Tracking Pixel -->
+    <script>
+        (function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
+            w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
+            m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://mautic.said.ps/mtc.js','mt');
+
+        mt('send', 'pageview');
+    </script>
+    <!-- END - Mautic Tracking Pixel -->
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script> 
     <!-- Magnific Popup core JS file --> 
